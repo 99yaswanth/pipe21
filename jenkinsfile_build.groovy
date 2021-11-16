@@ -18,5 +18,12 @@ pipeline{
                 sh " ls -l target/"
             }
         }
+        stage("uploading artifacts to s3"){
+            steps{
+                println "uploading artifacts s3 bucket"
+                sh "echo $BUILD_NUMBER"
+                sh "aws s3 cp target/hello-${BUILD_NUMBER}.war s3://yashwanth12/master/${BUILD_NUMBER}/"
+            }
+        }
     }
 }
