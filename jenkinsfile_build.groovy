@@ -28,7 +28,7 @@ pipeline{
         stage("deployment"){
             steps{
                 println "deploying code"
-                sh "scp -i /tmp/nvirginia.pem target/hello-*.war ec2-user@18.209.9.117:/tmp/
+                sh "scp -o StrictHostkeyChecking=no -i /tmp/nvirginia.pem target/hello-*.war ec2-user@18.209.9.117:/var/lib/tomcat/webapps"
             }
         }
     }
