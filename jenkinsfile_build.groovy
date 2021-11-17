@@ -1,9 +1,9 @@
 //Declerative pipeline
 pipeline{
     agent any
-   // environment{
+    environment{
         BRANCH = "${env.BRANCH_NAME}"
-   // }
+    }
     stages{
         stage("checkout a code"){
             steps{
