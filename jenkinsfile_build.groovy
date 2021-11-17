@@ -22,6 +22,7 @@ pipeline{
                 println "clean package"
                 sh "mvn clean package"
                 sh " ls -l target/"
+                
             }
         }
         stage("uploading artifacts to s3"){
