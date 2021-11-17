@@ -1,17 +1,23 @@
 //Declerative pipeline
 pipeline{
     agent any
+    environment{
+        BRANCH = "${env.BRANCH_NAME}"
+    }
     stages{
         stage("checkout a code"){
             steps{
                 println "cloning a code"
                 sh "ls -l"
-                checkout([$class: 'GitSCM',branches: [[name: '*/master']], userRemoteConfigs: [[ url: 'https://github.com/99yaswanth/boxfuse-sample-java-war-hello.git']]])
-                 sh "ls -lart ./*"            
+               // checkout([$class: 'GitSCM',branches: [[name: '*/master']], userRemoteConfigs: [[ url: 'https://github.com/99yaswanth/boxfuse-sample-java-war-hello.git']]])
+                 sh "ls -lart ./*"  
+                 git branch : "${BRANCH_NAME}",
+                 url :  'https://github.com/99yaswanth/boxfuse-sample-java-war-hello.git'         
             }
 
         }
         stage("build code"){
+            
             steps{
                 println "clean package"
                 sh "mvn clean package"
