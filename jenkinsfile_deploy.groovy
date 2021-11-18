@@ -24,7 +24,7 @@ pipeline{
             steps{
                 println "copying artifacts from jenkins to tomcat"
                 sh "ssh -i /tmp/nvirginia.pem ec2-user@${SERVER_IP}"
-                sh "scp -i /tmp/nvirginia.pem hello-${BUILD_NUM}.war ec2-user@${SERVER_IP}:/var/lib/tomcat/webapps"
+                sh "scp -i /tmp/nvirginia.pem hello-*.war ec2-user@${SERVER_IP}:/var/lib/tomcat/webapps"
             }
         }
     }
