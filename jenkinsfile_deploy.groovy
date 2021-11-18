@@ -26,6 +26,7 @@ pipeline{
                 println "Here I'm coping artifact from Jenkins to Tomcat servers"
                 sh "ssh -i /tmp/nvirginia.pem ec2-user@${SERVER_IP} \"systemctl status tomcat\""
                 sh "scp -i /tmp/nvirginia.pem hello-${BUILD_NUM}.war  ec2-user@${SERVER_IP}:/tmp/"
+                sh "sudo cp /tmp/hello-${BUILD_NUM}.war /var/lib/tomcat/webapps"
             }
         }
     }
