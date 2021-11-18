@@ -23,7 +23,7 @@ pipeline{
         stage("copying artifacts"){
             steps{
                 println "copying artifacts from jenkins to tomcat"
-                sh " ssh -i /tmp/nvirginia.pem ec2-user@${SERVER_IP} "\systemctl status tomcat\""
+                sh " ssh -i /tmp/nvirginia.pem ec2-user@${SERVER_IP}"
             }
         }
     }
