@@ -4,7 +4,7 @@ pipeline{
     parameters{
         string(name: 'BRANCH_NAME', defaultValue: 'master', description: 'from which branch artifacts want to deploy?')
         string(name: 'BUILD_NUM', defaultValue: '', description: 'from which BUILD NUM artifacts want to deploy?')
-        string(name: 'SERVER_IP', defaultValue: '', description: 'server ip?')
+        //string(name: 'SERVER_IP', defaultValue: '', description: 'server ip?')
         
     }
     stages{
