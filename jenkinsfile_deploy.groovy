@@ -13,6 +13,7 @@ pipeline{
                 aws s3 ls
                 aws s3 ls s3://yashwanth12
                 aws s3 ls s3://yashwanth12/${BRANCH_NAME}/${BUILD_NUM}/
+                """
             }
         }
     }
