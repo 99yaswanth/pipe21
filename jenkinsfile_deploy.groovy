@@ -15,7 +15,7 @@ pipeline{
                 aws s3 ls
                 aws s3 ls s3://yashartifacts
                 aws s3 ls s3://yashartifacts/${BRANCH_NAME}/${BUILD_NUM}/
-                aws s3 ls s3://yashartifacts/${BRANCH_NAME}/${BUILD_NUM}/hello-${BUILD_NUM}.war .
+                
 
                 """
             }
