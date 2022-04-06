@@ -13,9 +13,9 @@ pipeline{
                 println "Here I'm downloading artifacts from S3"
                 sh """
                         aws s3 ls
-                        aws s3 ls s3://yashwanth12
-                        aws s3 ls s3://yashwanth12/${BRANCH_NAME}/${BUILD_NUM}/
-                        aws s3 cp s3://yashwanth12/${BRANCH_NAME}/${BUILD_NUM}/hello-${BUILD_NUM}.war .
+                        aws s3 ls s3://yashwanth24
+                        aws s3 ls s3://yashwanth24/${BRANCH_NAME}/${BUILD_NUM}/
+                        aws s3 cp s3://yashwanth24/${BRANCH_NAME}/${BUILD_NUM}/hello-${BUILD_NUM}.war .
  
                    """
                 

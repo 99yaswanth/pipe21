@@ -30,13 +30,13 @@ pipeline{
             steps{
                 println "uploading artifacts s3 bucket"
                 sh "echo $BUILD_NUMBER"
-                sh "aws s3 cp target/hello-${BUILD_NUMBER}.war s3://yashwanth12/${BRANCH}/${BUILD_NUMBER}/"
+                sh "aws s3 cp target/hello-${BUILD_NUMBER}.war s3://yashwanth24/${BRANCH}/${BUILD_NUMBER}/"
             }
         }
         stage("deployment"){
             steps{
                 println "deploying code"
-               // sh "scp -o StrictHostkeyChecking=no -i /tmp/nvirginia.pem target/hello-*.war ec2-user@18.212.209.120:/var/lib/tomcat/webapps"
+               // sh "scp -o StrictHostkeyChecking=no -i /tmp/nvirginia1.pem target/hello-*.war ec2-user@18.212.209.120:/var/lib/tomcat/webapps"
             }
         }
     }
