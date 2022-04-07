@@ -24,7 +24,7 @@ pipeline{
         stage("copy artifacts") {
             steps {
                 println "Here I'm coping artifact from Jenkins to Tomcat servers"
-                 sh "scp -o StrictHostKeyChecking=no -i /tmp/yashnv.pem target/hello-${BUILD_NUM}.war ec2-user@${SERVER_IP}:/tmp"
+                 sh "scp -o StrictHostKeyChecking=no -i /tmp/yashnv.pem hello-${BUILD_NUM}.war ec2-user@${SERVER_IP}:/tmp"
                  sh "ssh -o StrictHostKeyChecking=no -i /tmp/yashnv.pem ec2-user@${SERVER_IP} \"sudo cp /tmp/hello-${BUILD_NUM}.war /var/lib/tomcat/webapps\""
                
             }
